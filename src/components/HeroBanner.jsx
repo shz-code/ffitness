@@ -12,6 +12,7 @@ export default function HeroBanner() {
           justifyContent: "center",
           rowGap: "2rem",
           width: { md: "60%" },
+          textAlign: { xs: "center", md: "left" },
         }}
       >
         <Typography
@@ -21,7 +22,7 @@ export default function HeroBanner() {
             background: "#1f1f1f",
             padding: "2px 10px",
             borderRadius: "0.5rem",
-            width: "70%",
+            width: { xs: "100%", md: "70%" },
           }}
         >
           <Paper
@@ -45,7 +46,10 @@ export default function HeroBanner() {
           Helps for ideal <br />
           body fitness
         </Typography>
-        <Typography variant="subtitle1" sx={{ width: "60%" }}>
+        <Typography
+          variant="subtitle1"
+          sx={{ width: { xs: "100%", md: "70%" } }}
+        >
           <span className="secondary_text">
             Want your body to be healthy, join our program with directions
             accordiong to your body's goals.
@@ -56,7 +60,14 @@ export default function HeroBanner() {
             Start
           </a>
         </Typography>
-        <Stack direction="row" gap={4}>
+        <Stack
+          direction="row"
+          sx={{
+            textAlign: "center",
+            justifyContent: { xs: "center", md: "flex-start" },
+          }}
+          gap={4}
+        >
           <Box>
             <Typography variant="h6">80</Typography>
             <span className="secondary_text">
@@ -79,7 +90,7 @@ export default function HeroBanner() {
       >
         <img
           style={{ width: "100%", height: "100%" }}
-          src="https://images.unsplash.com/photo-1575880347123-415303ab7ee1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=851&q=80"
+          src="https://images.unsplash.com/photo-1626337920103-ae64b9c688e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=866&q=80"
           alt=""
           className="banner_img"
         />
