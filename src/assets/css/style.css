@@ -1,0 +1,53 @@
+@import url('http://fonts.cdnfonts.com/css/roboto');
+
+:root {
+    --theme-color: red;
+    --theme-bg: #000;
+    --text-color-primary: white;
+    --text-color-secondary: rgba(255, 255, 255, 0.438);
+}
+
+body {
+    background-color: #000;
+    font-family: 'Roboto', sans-serif;
+    /* color: #FFFAFB; */
+    color: var(--text-color-primary)
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color-secondary);
+    font-family: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 50px;
+    background: red;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.banner_img {
+    border-radius: 1rem;
+}
+
+.secondary_text {
+    color: var(--text-color-secondary);
+}
