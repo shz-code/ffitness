@@ -8,7 +8,8 @@ function App() {
   return (
     <div>
       <Router>
-        <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
+        <Box>
+          {/* <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto"> */}
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

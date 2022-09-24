@@ -1,11 +1,22 @@
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import React from "react";
-import HeroBanner from "../HeroBanner";
+import ExcerciseCategories from "../ExcerciseCategories";
+import Hero from "../Hero";
 
 export default function Home() {
   return (
     <Box>
-      <HeroBanner />
+      <Stack
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          rowGap: "5rem",
+          textAlign: { xs: "center", md: "left" },
+        }}
+      >
+        <Hero />
+        <ExcerciseCategories />
+      </Stack>
     </Box>
   );
 }

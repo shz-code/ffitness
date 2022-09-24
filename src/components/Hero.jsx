@@ -1,8 +1,7 @@
-import { Paper, Typography } from "@mui/material";
-import { Box, Stack } from "@mui/system";
+import { Box, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
 
-export default function HeroBanner() {
+export default function Home() {
   return (
     <Stack pt="5rem" direction={{ xs: "column", md: "row" }}>
       <Box
@@ -12,7 +11,6 @@ export default function HeroBanner() {
           justifyContent: "center",
           rowGap: "2rem",
           width: { md: "60%" },
-          textAlign: { xs: "center", md: "left" },
         }}
       >
         <Typography
@@ -103,6 +101,7 @@ export default function HeroBanner() {
             transform: "rotate(-90deg)",
             zIndex: "-1",
             fontSize: { md: "7rem", xl: "9rem" },
+            opacity: "0.3",
           }}
         >
           <span className="secondary_text"> FITNESS </span>
