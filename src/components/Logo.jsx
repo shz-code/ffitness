@@ -8,10 +8,10 @@ export default function Logo({ ...rest }) {
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
-      <g clip-path="url(#clip0_1_23)">
+      <g clipPath="url(#clip0_1_23)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M198.984 108.175C220.384 108.175 237.84 91.2248 237.84 70.4465C237.84 49.6682 220.384 32.743 198.984 32.743C177.579 32.743 160.153 49.664 160.153 70.4465C160.153 91.2248 177.579 108.175 198.984 108.175Z"
           fill="#C16E70"
         />

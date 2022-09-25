@@ -1,7 +1,7 @@
 import { Box, Paper, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { memo } from "react";
 
-export default function Home() {
+function Hero({ count }) {
   return (
     <Stack pt="5rem" direction={{ xs: "column", md: "row" }}>
       <Box
@@ -67,9 +67,9 @@ export default function Home() {
           gap={4}
         >
           <Box>
-            <Typography variant="h6">80</Typography>
+            <Typography variant="h6">{count}</Typography>
             <span className="secondary_text">
-              Exclusive <br /> Program
+              Total <br /> Excercises
             </span>
           </Box>
           <Box>
@@ -110,3 +110,5 @@ export default function Home() {
     </Stack>
   );
 }
+
+export default memo(Hero);

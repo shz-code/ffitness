@@ -1,33 +1,34 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
 import ExcerciseCards from "./ExcerciseCards";
 
-export default function ExcerciseCategories() {
+export default function ExcerciseCategories({ props }) {
   return (
-    <Stack>
-      <Typography
-        variant="h3"
-        sx={{ textTransform: "uppercase", fontWeight: "bolder" }}
-        position="relative"
-      >
-        Explore Our <br /> Program
+    <Stack sx={{ rowGap: "2rem" }}>
+      <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
         <Typography
-          variant="h1"
-          sx={{
-            position: "absolute",
-            top: "-10px",
-            left: "-120px",
-            zIndex: "-1",
-            fontSize: { md: "7rem", xl: "9rem" },
-            opacity: "0.3",
-            display: { xs: "none", md: "block" },
-          }}
+          variant="h3"
+          sx={{ textTransform: "uppercase", fontWeight: "bolder" }}
+          position="relative"
         >
-          <span className="secondary_text"> PROGRAM </span>
+          Explore Our <br /> Program
+          <Typography
+            sx={{
+              position: "absolute",
+              top: "-40px",
+              left: { md: "-145px", xl: "-200px" },
+              zIndex: "-1",
+              fontSize: { md: "7rem", xl: "9rem" },
+              opacity: "0.3",
+              display: { xs: "none", md: "block" },
+            }}
+          >
+            <span className="secondary_text"> PROGRAM </span>
+          </Typography>
         </Typography>
-      </Typography>
-      <ExcerciseCards />
+      </Box>
+      <ExcerciseCards props={props} />
     </Stack>
   );
 }

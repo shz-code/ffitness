@@ -8,13 +8,12 @@ function App() {
   return (
     <div>
       <Router>
-        <Box>
-          {/* <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto"> */}
+        <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
         </Box>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       </Router>
     </div>
   );

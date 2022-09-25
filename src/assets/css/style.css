@@ -4,7 +4,7 @@
     --theme-color: red;
     --theme-bg: #000;
     --text-color-primary: white;
-    --text-color-secondary: rgba(255, 255, 255, 0.438);
+    --text-color-secondary: #ffffff70;
 }
 
 body {
@@ -50,4 +50,18 @@ a {
 
 .secondary_text {
     color: var(--text-color-secondary);
+}
+
+.card {
+    cursor: pointer;
+    border-top: 2px solid transparent;
+    transition: 0.3s ease;
+    margin: 0 10px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.card:hover {
+    border-top: 2px solid var(--theme-color);
 }
