@@ -5,7 +5,13 @@ import Logo from "./Logo";
 
 export default function Navbar() {
   return (
-    <Stack direction="row" alignItems="center" pt="1rem">
+    <Stack
+      direction="row"
+      alignItems="center"
+      pt="1rem"
+      sx={{ width: { xs: "95%", md: "80%" } }}
+      m="auto"
+    >
       <Logo className="logo" />
       <Stack direction="row" justifyContent="space-between" width="100%">
         <Stack

@@ -4,6 +4,7 @@ import BodyPartsContext from "../../lib/BodyPartsContext";
 import fetchData from "../../lib/fetchData";
 import ExcerciseCategories from "../ExerciseCategories";
 import Hero from "../Hero";
+import Navbar from "../Navbar";
 import ShowExercises from "../ShowExercises";
 
 function Home() {
@@ -27,6 +28,7 @@ function Home() {
 
   return (
     <Box>
+      <Navbar />
       <Stack
         sx={{
           display: "flex",
