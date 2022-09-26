@@ -4,11 +4,15 @@
     --theme-color: red;
     --theme-bg: #000;
     --text-color-primary: white;
-    --text-color-secondary: #ffffff70;
+    --text-color-secondary: #191919;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #000;
+    background-color: var(--theme-bg);
     font-family: 'Roboto', sans-serif;
     /* color: #FFFAFB; */
     color: var(--text-color-primary)
@@ -22,7 +26,7 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--text-color-secondary);
+    color: inherit;
     font-family: inherit;
 }
 
@@ -64,4 +68,23 @@ a {
 
 .card:hover {
     border-top: 2px solid var(--theme-color);
+}
+
+.exercise-gif-card .gif-card-status {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    column-gap: 1rem;
+}
+
+.exercise-gif-card span {
+    display: inline-block;
+    background: var(--theme-color);
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.gif-pagination-active {
+    background-color: var(--theme-color) !important;
 }

@@ -3,7 +3,7 @@ import { Stack, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import BodyPartsContext from "../lib/BodyPartsContext";
 
-export default function ExcerciseCard({ item }) {
+export default function ExerciseCategoryCard({ item }) {
   const bodyPart = useContext(BodyPartsContext);
   const { selectedBodyPart, SetselectedBodyPart } = bodyPart;
 
@@ -14,7 +14,7 @@ export default function ExcerciseCard({ item }) {
       sx={{
         display: "grid",
         rowGap: "0.5rem",
-        background: selectedBodyPart === item ? "red" : "#ffffff70",
+        background: selectedBodyPart === item ? "red" : "#191919",
         width: "250px",
         borderRadius: "0.5rem",
       }}
@@ -25,14 +25,16 @@ export default function ExcerciseCard({ item }) {
       <Typography>
         <AccessibilityNewIcon />
       </Typography>
-      <Typography variant="caption">{item.toUpperCase()}</Typography>
+      <Typography variant="h5" sx={{ fontWeight: "bolder" }}>
+        {item.toUpperCase()}
+      </Typography>
       <Typography sx={{ fontSize: "0.8rem" }}>
-        <span conten className="secondary_text">
+        <span>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
           labore quae incidunt debitis voluptate eos!{" "}
         </span>
       </Typography>
-      <a href="#none" style={{ color: "white" }}>
+      <a href="#home" style={{ color: "white" }}>
         Join Now
       </a>
     </Stack>

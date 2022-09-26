@@ -2,11 +2,12 @@ import { Box, Stack } from "@mui/material";
 import React, { memo, useEffect, useState } from "react";
 import BodyPartsContext from "../../lib/BodyPartsContext";
 import fetchData from "../../lib/fetchData";
-import ExcerciseCategories from "../ExcerciseCategories";
+import ExcerciseCategories from "../ExerciseCategories";
 import Hero from "../Hero";
+import ShowExercises from "../ShowExercises";
 
 function Home() {
-  const [excercises, Setexcercises] = useState([]);
+  const [exercises, Setexercises] = useState([]);
   const [bodyParts, SetbodyParts] = useState([]);
   const [selectedBodyPart, SetselectedBodyPart] = useState("all");
 
@@ -16,7 +17,7 @@ function Home() {
         SetbodyParts(["all", ...data]);
       });
       await fetchData().then((data) => {
-        Setexcercises([...data]);
+        Setexercises([...data]);
       });
     };
     getData();
@@ -35,12 +36,13 @@ function Home() {
         }}
       >
         <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
-          <Hero count={excercises.length} />
+          <Hero count={exercises.length} />
         </Box>
         <BodyPartsContext.Provider
-          value={{ selectedBodyPart, SetselectedBodyPart }}
+          value={{ selectedBodyPart, SetselectedBodyPart, exercises }}
         >
           <ExcerciseCategories props={{ bodyParts, selectedBodyPart }} />
+          <ShowExercises />
         </BodyPartsContext.Provider>
       </Stack>
     </Box>

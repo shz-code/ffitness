@@ -3,7 +3,7 @@ import React, { memo } from "react";
 
 function Hero({ count }) {
   return (
-    <Stack pt="5rem" direction={{ xs: "column", md: "row" }}>
+    <Stack pt="5rem" direction={{ xs: "column", md: "row" }} id="home">
       <Box
         sx={{
           display: "flex",
@@ -32,7 +32,7 @@ function Hero({ count }) {
           >
             JOIN
           </Paper>
-          <span style={{ marginLeft: "0.5rem" }} className="secondary_text">
+          <span style={{ marginLeft: "0.5rem" }}>
             {" "}
             Get more benefit by joining membership
           </span>
@@ -48,7 +48,7 @@ function Hero({ count }) {
           variant="subtitle1"
           sx={{ width: { xs: "100%", md: "70%" } }}
         >
-          <span className="secondary_text">
+          <span>
             Want your body to be healthy, join our program with directions
             accordiong to your body's goals.
           </span>
@@ -68,20 +68,20 @@ function Hero({ count }) {
         >
           <Box>
             <Typography variant="h6">{count}</Typography>
-            <span className="secondary_text">
+            <span>
               Total <br /> Excercises
             </span>
           </Box>
           <Box>
             <Typography variant="h6">872+</Typography>
-            <span className="secondary_text">Members</span>
+            <span>Members</span>
           </Box>
         </Stack>
       </Box>
       <Box
         sx={{
           width: { md: "40%" },
-          height: { md: "100%", xl: "600px" },
+          height: { md: "100%", xl: "50%" },
           position: "relative",
           display: { xs: "none", md: "block" },
         }}
@@ -101,7 +101,6 @@ function Hero({ count }) {
             transform: "rotate(-90deg)",
             zIndex: "-1",
             fontSize: { md: "7rem", xl: "9rem" },
-            opacity: "0.3",
           }}
         >
           <span className="secondary_text"> FITNESS </span>
