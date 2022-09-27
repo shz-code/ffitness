@@ -11,6 +11,7 @@ function Home() {
   const [exercises, Setexercises] = useState([]);
   const [bodyParts, SetbodyParts] = useState([]);
   const [selectedBodyPart, SetselectedBodyPart] = useState("all");
+  const [searchExercises, SetsearchExercises] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -25,6 +26,13 @@ function Home() {
 
     return getData;
   }, []);
+
+  const handleSearchExcercises = (item) => {
+    const searchedExercises = exercises.filter((exercise) =>
+      exercise.bodyPart.includes(item)
+    );
+    SetsearchExercises(searchedExercises);
+  };
 
   return (
     <Box>
@@ -41,9 +49,15 @@ function Home() {
           <Hero count={exercises.length} />
         </Box>
         <BodyPartsContext.Provider
-          value={{ selectedBodyPart, SetselectedBodyPart, exercises }}
+          value={{
+            selectedBodyPart,
+            SetselectedBodyPart,
+            exercises,
+            handleSearchExcercises,
+            searchExercises,
+          }}
         >
-          <ExcerciseCategories props={{ bodyParts, selectedBodyPart }} />
+          <ExcerciseCategories props={{ bodyParts }} />
           <ShowExercises />
         </BodyPartsContext.Provider>
       </Stack>

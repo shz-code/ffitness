@@ -6,7 +6,7 @@ import SectionHeader from "./SectionHeader";
 
 export default function ShowExercises() {
   const bodyPart = useContext(BodyPartsContext);
-  const { selectedBodyPart, exercises } = bodyPart;
+  const { selectedBodyPart, searchExercises, exercises } = bodyPart;
   return (
     <Stack>
       <SectionHeader
@@ -14,7 +14,11 @@ export default function ShowExercises() {
         p2={`${selectedBodyPart} exercises`}
       />
       <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
-        <ExerciseGifCards exercises={exercises} />
+        {selectedBodyPart === "all" ? (
+          <ExerciseGifCards exercises={exercises} />
+        ) : (
+          <ExerciseGifCards exercises={searchExercises} />
+        )}
       </Box>
     </Stack>
   );

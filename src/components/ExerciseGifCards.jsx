@@ -23,7 +23,13 @@ function ExerciseGifCards({ exercises }) {
 
   const paginate = (e, value) => {
     SetcurrentPage(value);
-    window.scrollTo({ top: 1300, behavior: "smooth" });
+    if (window.innerWidth > 1535) {
+      window.scrollTo({ top: 1300, behavior: "smooth" });
+    } else if (window.innerWidth <= 899) {
+      window.scrollTo({ top: 1100, behavior: "smooth" });
+    } else if (window.innerWidth <= 1535) {
+      window.scrollTo({ top: 1150, behavior: "smooth" });
+    }
   };
 
   const lastIndex = currentPage * exPerPage;

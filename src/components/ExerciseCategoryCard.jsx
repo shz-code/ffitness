@@ -5,12 +5,25 @@ import BodyPartsContext from "../lib/BodyPartsContext";
 
 export default function ExerciseCategoryCard({ item }) {
   const bodyPart = useContext(BodyPartsContext);
-  const { selectedBodyPart, SetselectedBodyPart } = bodyPart;
+  const { selectedBodyPart, SetselectedBodyPart, handleSearchExcercises } =
+    bodyPart;
+
+  const handleClick = () => {
+    SetselectedBodyPart(item);
+    handleSearchExcercises(item);
+    if (window.innerWidth > 1535) {
+      window.scrollTo({ top: 1300, behavior: "smooth" });
+    } else if (window.innerWidth <= 899) {
+      window.scrollTo({ top: 1100, behavior: "smooth" });
+    } else if (window.innerWidth <= 1535) {
+      window.scrollTo({ top: 1150, behavior: "smooth" });
+    }
+  };
 
   return (
     <Stack
       type="button"
-      onClick={() => SetselectedBodyPart(item)}
+      onClick={handleClick}
       sx={{
         display: "grid",
         rowGap: "0.5rem",

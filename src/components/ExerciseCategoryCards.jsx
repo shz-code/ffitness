@@ -1,5 +1,5 @@
 import { Stack } from "@mui/material";
-import React, { memo } from "react";
+import React from "react";
 import { ScrollMenu } from "react-horizontal-scrolling-menu";
 import useDrag from "../lib/useDrag";
 import ExerciseCategoryCard from "./ExerciseCategoryCard";
@@ -32,4 +32,4 @@ function ExerciseCategoryCards({ props }) {
     </Stack>
   );
 }
-export default memo(ExerciseCategoryCards);
+export default ExerciseCategoryCards;
