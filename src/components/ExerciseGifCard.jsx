@@ -2,9 +2,9 @@ import { Stack, Typography } from "@mui/material";
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
-function ExerciseGifCard({ item }) {
+function ExerciseGifCard({ item, ...rest }) {
   return (
-    <Link to={`/exercise/${item.id}`}>
+    <Link to={`/exercise/${item.id}`} style={{ ...rest }} draggable={false}>
       <Stack
         width="350px"
         sx={{
@@ -19,7 +19,8 @@ function ExerciseGifCard({ item }) {
           <img
             style={{ borderRadius: "0.5rem" }}
             src={item.gifUrl}
-            alt="nunu"
+            alt={item.name}
+            draggable={false}
           />
           <div className="gif-card-status">
             <span>{item.bodyPart.toUpperCase()}</span>

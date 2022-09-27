@@ -4,11 +4,9 @@ import BodyPartsContext from "../../lib/BodyPartsContext";
 import fetchData from "../../lib/fetchData";
 import ExcerciseCategories from "../ExerciseCategories";
 import Hero from "../Hero";
-import Navbar from "../Navbar";
 import ShowExercises from "../ShowExercises";
 
-function Home() {
-  const [exercises, Setexercises] = useState([]);
+function Home({ exercises }) {
   const [bodyParts, SetbodyParts] = useState([]);
   const [selectedBodyPart, SetselectedBodyPart] = useState("all");
   const [searchExercises, SetsearchExercises] = useState([]);
@@ -18,13 +16,8 @@ function Home() {
       await fetchData("bodyPartList").then((data) => {
         SetbodyParts(["all", ...data]);
       });
-      await fetchData().then((data) => {
-        Setexercises([...data]);
-      });
     };
     getData();
-
-    return getData;
   }, []);
 
   const handleSearchExcercises = (item) => {
@@ -36,7 +29,6 @@ function Home() {
 
   return (
     <Box>
-      <Navbar />
       <Stack
         sx={{
           display: "flex",

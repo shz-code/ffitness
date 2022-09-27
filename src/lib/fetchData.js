@@ -4,8 +4,8 @@ const BASE_URL = "https://exercisedb.p.rapidapi.com/exercises";
 
 const options = {
   headers: {
-    "X-RapidAPI-Key": "764ac538a4msh2058723fa431bd0p149715jsne8aadbaf7daa",
-    "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+    "X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,
+    "X-RapidAPI-Host": process.env.REACT_APP_RAPIDAPI_HOST,
   },
 };
 
