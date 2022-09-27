@@ -1,4 +1,10 @@
-import { createTheme, Pagination, Stack, ThemeProvider } from "@mui/material";
+import {
+  createTheme,
+  Pagination,
+  Stack,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
 import React, { memo, useState } from "react";
 import ExerciseGifCard from "./ExerciseGifCard";
 
@@ -56,6 +62,9 @@ function ExerciseGifCards({ exercises }) {
         ))}
       </Stack>
       <Stack sx={{ alignItems: "center" }}>
+        <Typography variant="subtitle1">
+          Current Page: <span style={{ color: "red" }}> {currentPage} </span>
+        </Typography>
         <ThemeProvider theme={theme}>
           <Pagination
             showFirstButton
@@ -70,6 +79,7 @@ function ExerciseGifCards({ exercises }) {
             size="large"
           />
         </ThemeProvider>
+        <Stack></Stack>
       </Stack>
     </Stack>
   );

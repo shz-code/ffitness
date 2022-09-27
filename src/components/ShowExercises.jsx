@@ -8,7 +8,7 @@ export default function ShowExercises() {
   const bodyPart = useContext(BodyPartsContext);
   const { selectedBodyPart, searchExercises, exercises } = bodyPart;
   return (
-    <Stack>
+    <Stack id="exercises">
       <SectionHeader
         p1="Showing Results of"
         p2={`${selectedBodyPart} exercises`}
