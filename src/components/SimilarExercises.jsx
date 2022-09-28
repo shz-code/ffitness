@@ -33,8 +33,8 @@ export default function SimilarExercises({ props }) {
       <Stack position="relative" py={4} mb={{ xs: "4rem", md: "0" }}>
         <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
           {props.map((item) => (
-            <Box ml="0" mr="2rem" draggble={false}>
-              <ExerciseGifCard key={item.id} item={item} />
+            <Box key={item.id} ml="0" mr="2rem" draggble="false">
+              <ExerciseGifCard item={item} />
             </Box>
           ))}
         </ScrollMenu>

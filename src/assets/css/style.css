@@ -93,6 +93,22 @@ a {
     border-radius: 1rem;
 }
 
+.exercise-video-card {
+    position: relative;
+}
+
+.exercise-video-card .duration {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    display: inline-block;
+    background: var(--theme-color);
+    color: white;
+    padding: 2px 5px;
+    font-size: 0.8rem;
+    border-radius: 1rem;
+}
+
 .gif-pagination-active {
     background-color: var(--theme-color) !important;
 }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function ExerciseGifCard({ item, ...rest }) {
   return (
-    <Link to={`/exercise/${item.id}`} style={{ ...rest }} draggable={false}>
+    <Link to={`/exercise/${item.id}`} style={{ ...rest }} draggable="false">
       <Stack
         width="350px"
         sx={{
@@ -20,7 +20,7 @@ function ExerciseGifCard({ item, ...rest }) {
             style={{ borderRadius: "0.5rem" }}
             src={item.gifUrl}
             alt={item.name}
-            draggable={false}
+            draggable="false"
           />
           <div className="gif-card-status">
             <span>{item.bodyPart.toUpperCase()}</span>

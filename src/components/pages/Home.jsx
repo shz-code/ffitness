@@ -18,6 +18,7 @@ function Home({ exercises }) {
       });
     };
     getData();
+    return getData;
   }, []);
 
   const handleSearchExcercises = (item) => {
