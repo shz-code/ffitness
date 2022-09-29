@@ -11,7 +11,8 @@ export default function ShowExercises() {
     <Stack id="exercises">
       <SectionHeader
         p1="Showing Results of"
-        p2={`${selectedBodyPart} exercises`}
+        p2={`${selectedBodyPart}`}
+        p3="exercises"
       />
       <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
         {selectedBodyPart === "all" ? (

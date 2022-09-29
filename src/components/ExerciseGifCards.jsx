@@ -63,7 +63,8 @@ function ExerciseGifCards({ exercises }) {
       </Stack>
       <Stack sx={{ alignItems: "center" }}>
         <Typography variant="subtitle1">
-          Current Page: <span style={{ color: "red" }}> {currentPage} </span>
+          Current Page:{" "}
+          <span style={{ color: "#FF6158" }}> {currentPage} </span>
         </Typography>
         <ThemeProvider theme={theme}>
           <Pagination

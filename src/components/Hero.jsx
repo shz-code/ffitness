@@ -30,27 +30,27 @@ function Hero({ count }) {
               borderRadius: "1rem",
             }}
           >
-            JOIN
+            Start Working Out
           </Paper>
-          <span style={{ marginLeft: "0.5rem" }}>
-            {" "}
-            Get more benefit by joining membership
-          </span>
+          <span style={{ marginLeft: "0.5rem" }}> Over 1000 Exercises</span>
         </Typography>
         <Typography
           variant="h2"
           sx={{ textTransform: "uppercase", fontWeight: "bolder" }}
         >
-          Helps for ideal <br />
-          body fitness
+          Get the Beast <br />
+          <span className="hero-text-branding"> ffitness </span>
         </Typography>
         <Typography
           variant="subtitle1"
-          sx={{ width: { xs: "100%", md: "70%" } }}
+          sx={{ width: { xs: "100%", md: "70%" }, textTransform: "capitalize" }}
         >
           <span>
-            Want your body to be healthy, join our program with directions
-            accordiong to your body's goals.
+            Get the perfect body,{" "}
+            <span style={{ color: "#FF6158", textTransform: "lowercase" }}>
+              ffitness
+            </span>{" "}
+            has over 1000 exercises with Gifs and youtube videos to get started.
           </span>
         </Typography>
         <Typography variant="button">
@@ -68,13 +68,15 @@ function Hero({ count }) {
         >
           <Box>
             <Typography variant="h6">{count}</Typography>
-            <span>
-              Total <br /> Excercises
-            </span>
+            <span>Total Excrcises</span>
           </Box>
           <Box>
-            <Typography variant="h6">872+</Typography>
-            <span>Members</span>
+            <Typography variant="h6">9</Typography>
+            <span>BodyParts</span>
+          </Box>
+          <Box>
+            <Typography variant="h6">18</Typography>
+            <span>Target Muscles</span>
           </Box>
         </Stack>
       </Box>
@@ -96,14 +98,14 @@ function Hero({ count }) {
           variant="h1"
           sx={{
             position: "absolute",
-            top: { md: "150px", xl: "200px" },
+            top: { md: "160px", xl: "250px" },
             left: { md: "-240px", xl: "-310px" },
             transform: "rotate(-90deg)",
             zIndex: "-1",
-            fontSize: { md: "7rem", xl: "9rem" },
+            fontSize: { md: "6rem", xl: "8rem" },
           }}
         >
-          <span className="secondary_text"> FITNESS </span>
+          <span className="secondary_text"> FFITNESS </span>
         </Typography>
       </Box>
     </Stack>

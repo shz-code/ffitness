@@ -10,7 +10,7 @@ function ExerciseGifCard({ item, ...rest }) {
         sx={{
           background: "#191919",
           borderRadius: "0.5rem",
-          borderTop: "5px solid red",
+          borderTop: "5px solid #FF6158",
           cursor: "pointer",
         }}
         className="exercise-gif-card"

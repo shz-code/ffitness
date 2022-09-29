@@ -12,9 +12,14 @@ export default function Details({ details }) {
         gap="60px"
         sx={{ flexDirection: { lg: "row" }, p: "20px", alignItems: "center" }}
       >
-        <Box>
+        <Box width="40%">
           <img
-            style={{ width: "100%", objectFit: "contain" }}
+            style={{
+              width: "100%",
+              objectFit: "contain",
+              borderTop: "5px solid #FF6158",
+              borderRadius: "0.5rem",
+            }}
             src={gifUrl}
             alt={name}
           />

@@ -23,10 +23,21 @@ function Home({ exercises }) {
   }, []);
 
   const handleSearchExcercises = (item) => {
-    const searchedExercises = exercises.filter((exercise) =>
-      exercise.bodyPart.includes(item)
+    const searchedExercises = exercises.filter(
+      (exercise) =>
+        exercise.bodyPart.includes(item) ||
+        exercise.target.includes(item) ||
+        exercise.equipment.includes(item) ||
+        exercise.name.includes(item)
     );
     SetsearchExercises(searchedExercises);
+    if (window.innerWidth > 1535) {
+      window.scrollTo({ top: 1300, behavior: "smooth" });
+    } else if (window.innerWidth <= 899) {
+      window.scrollTo({ top: 1100, behavior: "smooth" });
+    } else if (window.innerWidth <= 1535) {
+      window.scrollTo({ top: 1150, behavior: "smooth" });
+    }
   };
 
   return (
@@ -51,7 +62,7 @@ function Home({ exercises }) {
             searchExercises,
           }}
         >
-          <SearchExercise SetsearchExercises={SetsearchExercises} />
+          <SearchExercise handleSearchExcercises={handleSearchExcercises} />
           <ExcerciseCategories props={{ bodyParts }} />
           <ShowExercises />
         </BodyPartsContext.Provider>

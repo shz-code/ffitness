@@ -11,13 +11,6 @@ export default function ExerciseCategoryCard({ item }) {
   const handleClick = () => {
     SetselectedBodyPart(item);
     handleSearchExcercises(item);
-    if (window.innerWidth > 1535) {
-      window.scrollTo({ top: 1300, behavior: "smooth" });
-    } else if (window.innerWidth <= 899) {
-      window.scrollTo({ top: 1100, behavior: "smooth" });
-    } else if (window.innerWidth <= 1535) {
-      window.scrollTo({ top: 1150, behavior: "smooth" });
-    }
   };
 
   return (
@@ -27,9 +20,10 @@ export default function ExerciseCategoryCard({ item }) {
       sx={{
         display: "grid",
         rowGap: "0.5rem",
-        background: selectedBodyPart === item ? "red" : "#191919",
+        background: selectedBodyPart === item ? "#FF6158" : "#191919",
         width: "250px",
         borderRadius: "0.5rem",
+        height: "220px",
       }}
       className="card"
       py={3}
@@ -42,14 +36,31 @@ export default function ExerciseCategoryCard({ item }) {
         {item.toUpperCase()}
       </Typography>
       <Typography sx={{ fontSize: "0.8rem" }}>
-        <span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          labore quae incidunt debitis voluptate eos!{" "}
+        <span style={{ textTransform: "capitalize" }}>
+          Check out {item} exercises that helps to&nbsp;
+          {item === "back"
+            ? "Build big muscles in your back form your physique's appearance and can minimize pain."
+            : item === "cardio"
+            ? "strengthens your immune system."
+            : item === "chest"
+            ? "enhance your quality of life."
+            : item === "lower arms"
+            ? "Increased arm strength will increase results in any workouts."
+            : item === "lower legs"
+            ? "turn you faster and stronger."
+            : item === "neck"
+            ? "release tension, tightness, and stiffness."
+            : item === "shoulders"
+            ? "promote healthy movement patterns and improve posture and muscle function."
+            : item === "upper arms"
+            ? "improve your posture."
+            : item === "upper legs"
+            ? "improve your big lifts."
+            : item === "waist"
+            ? "get an hourglass figure."
+            : "Lead a healthy life."}
         </span>
       </Typography>
-      <a href="#home" style={{ color: "white" }}>
-        Join Now
-      </a>
     </Stack>
   );
 }

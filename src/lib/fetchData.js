@@ -5,14 +5,14 @@ const BASE_YL_URL = "https://youtube-search-and-download.p.rapidapi.com";
 
 const optionsYt = {
   headers: {
-    //"X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,
+    "X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,
     "X-RapidAPI-Host": "youtube-search-and-download.p.rapidapi.com",
   },
 };
 
 const options = {
   headers: {
-    //"X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,
+    "X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,
     "X-RapidAPI-Host": process.env.REACT_APP_RAPIDAPI_HOST,
   },
 };

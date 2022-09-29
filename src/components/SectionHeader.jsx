@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-export default function SectionHeader({ p1, p2 }) {
+export default function SectionHeader({ p1, p2, p3 }) {
   return (
     <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
       <Typography
@@ -9,7 +9,11 @@ export default function SectionHeader({ p1, p2 }) {
         sx={{ textTransform: "uppercase", fontWeight: "bolder" }}
         position="relative"
       >
-        {p1} <br /> <span style={{ color: "#FF6158" }}> {p2} </span>
+        {p1} <br />{" "}
+        <span style={{ color: "#FF6158" }}>
+          {" "}
+          {p2} {p3}{" "}
+        </span>
         <Typography
           sx={{
             position: "absolute",
