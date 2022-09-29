@@ -1,6 +1,6 @@
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
 import Logo from "./Logo";
@@ -8,27 +8,46 @@ import LogoTxt from "./LogoTxt";
 
 export default function Footer() {
   return (
-    <Stack sx={{ background: "grey" }} py={4} mt={4}>
+    <Stack sx={{ background: "#191919" }} py={4} mt={4}>
       <Stack sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
-        <Stack
-          sx={{ display: "grid", gridTemplateColumns: "repeat(2,auto)" }}
-          justifyContent="space-between"
-        >
+        <Stack sx={{ display: "grid", rowGap: "1rem", textAlign: "center" }}>
           <Stack>
-            <Box>
-              <Logo /> <LogoTxt />
-            </Box>
-            <Typography variant="caption">
-              Helps for ideal body <br /> ffitness
+            <Stack
+              direction="row"
+              sx={{ width: "200px", columnGap: "0.5rem" }}
+              pb={3}
+              m="auto"
+            >
+              <Logo className="logo-footer" /> <LogoTxt />
+            </Stack>
+            <Typography variant="subtitle1">
+              Get a Beast Body <br /> ffitness
             </Typography>
           </Stack>
-          <Typography variant="h4" sx={{ fontWeight: "bolder" }}>
-            Follow us: <FacebookIcon /> <GitHubIcon />
+          <Typography variant="h6">
+            Developed by{" "}
+            <a href="https://github.com/shz-code" style={{ color: "#FF6158" }}>
+              @shz-code
+            </a>
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bolder",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              columnGap: "0.5rem",
+            }}
+          >
+            <a href="https://www.facebook.com/fb.shahidul.alam">
+              <FacebookIcon />
+            </a>
+            <a href="https://github.com/shz-code">
+              <GitHubIcon />
+            </a>
           </Typography>
         </Stack>
-        <Typography variant="h4" sx={{ textAlign: "center" }}>
-          Developed by @shz-code
-        </Typography>
       </Stack>
     </Stack>
   );

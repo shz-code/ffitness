@@ -9,7 +9,7 @@ export default function SectionHeader({ p1, p2 }) {
         sx={{ textTransform: "uppercase", fontWeight: "bolder" }}
         position="relative"
       >
-        {p1} <br /> <span style={{ color: "red" }}> {p2} </span>
+        {p1} <br /> <span style={{ color: "#FF6158" }}> {p2} </span>
         <Typography
           sx={{
             position: "absolute",

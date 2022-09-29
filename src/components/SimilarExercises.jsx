@@ -28,7 +28,7 @@ export default function SimilarExercises({ props }) {
   };
 
   return (
-    <Stack>
+    <Stack id="exercises">
       <SectionHeader p1="similar" p2="exercises" />
       <Stack position="relative" py={4} mb={{ xs: "4rem", md: "0" }}>
         <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>

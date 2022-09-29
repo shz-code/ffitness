@@ -43,7 +43,11 @@ export default function ExercisevideoCard({ item }) {
         <span className="duration">{lengthText}</span>
       </a>
       <CardContent
-        sx={{ backgroundColor: "#1E1E1E", display: "grid", rowGap: "0.5rem" }}
+        sx={{
+          backgroundColor: "#191919",
+          display: "grid",
+          rowGap: "0.5rem",
+        }}
       >
         <a
           href={`https://youtu.be/${videoId}`}
@@ -52,7 +56,7 @@ export default function ExercisevideoCard({ item }) {
           draggable="false"
         >
           <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
-            {title.length > 60 ? <span> {title.slice(0, 60)}... </span> : title}
+            {title.length > 30 ? <span> {title.slice(0, 30)}... </span> : title}
           </Typography>
         </a>
 

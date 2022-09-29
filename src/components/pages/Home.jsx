@@ -4,6 +4,7 @@ import BodyPartsContext from "../../lib/BodyPartsContext";
 import fetchData from "../../lib/fetchData";
 import ExcerciseCategories from "../ExerciseCategories";
 import Hero from "../Hero";
+import SearchExercise from "../SearchExercise";
 import ShowExercises from "../ShowExercises";
 
 function Home({ exercises }) {
@@ -50,6 +51,7 @@ function Home({ exercises }) {
             searchExercises,
           }}
         >
+          <SearchExercise SetsearchExercises={SetsearchExercises} />
           <ExcerciseCategories props={{ bodyParts }} />
           <ShowExercises />
         </BodyPartsContext.Provider>

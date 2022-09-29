@@ -21,9 +21,9 @@ export default function ExerciseVideos({ exerciseVideos }) {
           }}
           py={4}
         >
-          {exerciseVideos?.map((item, index) =>
-            index < 6 ? <ExercisevideoCard item={item} key={index} /> : null
-          )}
+          {exerciseVideos?.slice(0, 6).map((item, index) => (
+            <ExercisevideoCard item={item} key={index} />
+          ))}
         </Stack>
       </Stack>
     </Stack>
