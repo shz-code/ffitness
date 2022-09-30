@@ -39,7 +39,13 @@ function Hero({ count }) {
           sx={{ textTransform: "uppercase", fontWeight: "bolder" }}
         >
           Get the Beast <br />
-          <span className="hero-text-branding"> ffitness </span>
+          <span
+            className="hero-text-branding"
+            style={{ fontFamily: "Phenomena" }}
+          >
+            {" "}
+            ffitness{" "}
+          </span>
         </Typography>
         <Typography
           variant="subtitle1"

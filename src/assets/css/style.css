@@ -44,8 +44,8 @@ a {
 }
 
 .hero-text-branding {
-    font-family: 'Phenomena', sans-serif;
     color: var(--theme-color);
+    text-transform: lowercase;
 }
 
 .btn {

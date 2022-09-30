@@ -19,7 +19,7 @@ export default function ExercisevideoCard({ item }) {
         width: { xs: "358px", md: "320px" },
         background: "#191919",
         borderRadius: "0.5rem",
-        borderTop: "5px solid red",
+        borderTop: "5px solid #FF6158",
         cursor: "pointer",
         textAlign: "left",
       }}
@@ -69,7 +69,7 @@ export default function ExercisevideoCard({ item }) {
             rel="noreferrer"
             target="_blank"
           >
-            <span style={{ color: "red" }}>{channelName}</span>
+            <span style={{ color: "#FF6158" }}>{channelName.slice(0, 40)}</span>
           </a>
           <span style={{ color: "gray" }}>{viewCountText}</span>
         </Typography>
