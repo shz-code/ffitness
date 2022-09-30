@@ -1,6 +1,5 @@
+![ffitness logo](./src/assets/img/ffitness-text.png)
 # ffitness | Exercise clone using rapid api | A react app.
-
-[ffitness logo](./src/assets/img/ffitness-text.png)
 
 Tech & Tools used:
 
