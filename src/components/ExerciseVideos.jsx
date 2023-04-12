@@ -1,9 +1,12 @@
 import { Stack } from "@mui/material";
 import React from "react";
-import ExercisevideoCard from "./ExercisevideoCard";
+// import { useGetVideosQuery } from "../features/api/apiSlice";
+// import ExercisevideoCard from "./ExercisevideoCard";
 import SectionHeader from "./SectionHeader";
 
-export default function ExerciseVideos({ exerciseVideos }) {
+export default function ExerciseVideos({ name }) {
+  // const { data: videos, isLoading } = useGetVideosQuery(name);
+  console.log("Exercise Videos");
   return (
     <Stack>
       <SectionHeader p1="exercise" p2="videos" />
@@ -21,9 +24,12 @@ export default function ExerciseVideos({ exerciseVideos }) {
           }}
           py={4}
         >
-          {exerciseVideos?.slice(0, 6).map((item, index) => (
-            <ExercisevideoCard item={item} key={index} />
-          ))}
+          {/* {!isLoading &&
+            videos?.contents
+              .slice(0, 6)
+              .map((item, index) => (
+                <ExercisevideoCard item={item} key={index} />
+              ))} */}
         </Stack>
       </Stack>
     </Stack>

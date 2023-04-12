@@ -1,15 +1,25 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { Stack } from "@mui/material";
-import React, { useState } from "react";
-import badypartImg from "../assets/img/bodyPart.svg";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import SearchImage from "../assets/img/bodyPart.svg";
+import { setSearch } from "../features/filter/filterSlice";
 import SectionHeader from "./SectionHeader";
 
-export default function SearchExercise({ handleSearchExcercises }) {
-  const [search, Setsearch] = useState("");
+export default function SearchExercise() {
+  const [search, setLocalSearch] = useState("");
+  const dispatch = useDispatch();
+  const { search: stateSearch } = useSelector((state) => state.filter);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSearchExcercises(search);
+    dispatch(setSearch(search));
   };
+
+  useEffect(() => {
+    setLocalSearch(stateSearch);
+  }, [stateSearch]);
+
   return (
     <Stack>
       <SectionHeader p1="Search for any" p2="exercise" />
@@ -30,11 +40,11 @@ export default function SearchExercise({ handleSearchExcercises }) {
             <input
               required
               value={search}
-              onChange={(e) => Setsearch(e.target.value)}
+              onChange={(e) => setLocalSearch(e.target.value)}
               type="text"
             />{" "}
             <Stack position="absolute" sx={{ top: "0", right: "0px" }}>
-              <img src={badypartImg} alt="Icon" className="logo" />
+              <img src={SearchImage} alt="Icon" className="logo" />
             </Stack>
           </Stack>
           <button type="submit" className="btn">

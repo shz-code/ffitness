@@ -4,7 +4,7 @@ import { ScrollMenu } from "react-horizontal-scrolling-menu";
 import useDrag from "../lib/useDrag";
 import ExerciseCategoryCard from "./ExerciseCategoryCard";
 
-function ExerciseCategoryCards({ props }) {
+function ExerciseCategoryCards({ bodyParts }) {
   // NOTE: for drag by mouse
   const { dragStart, dragStop, dragMove } = useDrag();
   const handleDrag =
@@ -23,7 +23,7 @@ function ExerciseCategoryCards({ props }) {
         onMouseUp={() => dragStop}
         onMouseMove={handleDrag}
       >
-        {props.bodyParts.map((item, index) =>
+        {bodyParts.map((item, index) =>
           item !== "all" ? (
             <ExerciseCategoryCard item={item} key={index} />
           ) : null

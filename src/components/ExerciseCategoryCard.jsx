@@ -1,22 +1,18 @@
 import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
 import { Stack, Typography } from "@mui/material";
-import React, { useContext } from "react";
-import BodyPartsContext from "../lib/BodyPartsContext";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedBodyPart } from "../features/filter/filterSlice";
 
 export default function ExerciseCategoryCard({ item }) {
-  const bodyPart = useContext(BodyPartsContext);
-  const { selectedBodyPart, SetselectedBodyPart, handleSearchExcercises } =
-    bodyPart;
+  const dispatch = useDispatch();
 
-  const handleClick = () => {
-    SetselectedBodyPart(item);
-    handleSearchExcercises(item);
-  };
+  const { selectedBodyPart } = useSelector((state) => state.filter);
 
   return (
     <Stack
       type="button"
-      onClick={handleClick}
+      onClick={() => dispatch(setSelectedBodyPart(item))}
       sx={{
         display: "grid",
         rowGap: "0.5rem",

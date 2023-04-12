@@ -10,7 +10,7 @@
 
 # production
 /build
-
+exercises.json
 # misc
 .DS_Store
 .env.local

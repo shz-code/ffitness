@@ -23,11 +23,13 @@ export const fetchYoutubeVideos = async (url) => {
 };
 
 const fetchData = async (url) => {
-  const { data } =
-    url === undefined
-      ? await axios.get(`${BASE_URL}`, options)
-      : await axios.get(`${BASE_URL}/${url}`, options);
-  return data;
+  console.log("Fetching");
+  // const { data } =
+  //   url === undefined
+  //     ? await axios.get(`${BASE_URL}`, options)
+  //     : await axios.get(`${BASE_URL}/${url}`, options);
+  // return data;
+  return [];
 };
 
 export default fetchData;

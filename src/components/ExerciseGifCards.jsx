@@ -24,11 +24,11 @@ const theme = createTheme({
 });
 
 function ExerciseGifCards({ exercises }) {
-  const [currentPage, SetcurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [exPerPage] = useState(9);
 
   const paginate = (e, value) => {
-    SetcurrentPage(value);
+    setCurrentPage(value);
     if (window.innerWidth > 1535) {
       window.scrollTo({ top: 1300, behavior: "smooth" });
     } else if (window.innerWidth <= 899) {
@@ -80,7 +80,6 @@ function ExerciseGifCards({ exercises }) {
             size="large"
           />
         </ThemeProvider>
-        <Stack></Stack>
       </Stack>
     </Stack>
   );

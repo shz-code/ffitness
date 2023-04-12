@@ -3,11 +3,11 @@ import React from "react";
 import ExerciseCategoryCards from "./ExerciseCategoryCards";
 import SectionHeader from "./SectionHeader";
 
-export default function ExerciseCategories({ props }) {
+export default function ExerciseCategories({ bodyParts }) {
   return (
     <Stack sx={{ rowGap: "3rem" }}>
-      <SectionHeader p1="EXPLORE all" p2="Categories" />
-      <ExerciseCategoryCards props={props} />
+      <SectionHeader p1="EXPLORE ALL" p2="Categories" />
+      <ExerciseCategoryCards bodyParts={bodyParts} />
     </Stack>
   );
 }
