@@ -1,4 +1,4 @@
-import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
+import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import { Stack, Typography } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,8 +25,8 @@ export default function ExerciseCategoryCard({ item }) {
       py={3}
       px={{ xs: "0", md: 3 }}
     >
-      <Typography>
-        <AccessibilityNewIcon />
+      <Typography color={selectedBodyPart === item ? "white" : "#FF6158"}>
+        <FitnessCenterIcon />
       </Typography>
       <Typography variant="h5" sx={{ fontWeight: "bolder" }}>
         {item.toUpperCase()}
