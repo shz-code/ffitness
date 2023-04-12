@@ -1,12 +1,12 @@
 import { Box, Stack } from "@mui/material";
 import React, { memo } from "react";
 import { useGetBodyPartsQuery } from "../../features/api/exercisesApiSlice";
-import ExcerciseCategories from "../ExerciseCategories";
+import ExerciseCategories from "../ExerciseCategories";
 import Hero from "../Hero";
 import SearchExercise from "../SearchExercise";
 import ShowExercises from "../ShowExercises";
 
-function Home({ exercises }) {
+function Home() {
   const { data: bodyParts, isLoading } = useGetBodyPartsQuery();
 
   return (
@@ -20,11 +20,11 @@ function Home({ exercises }) {
         }}
       >
         <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
-          <Hero count={exercises.length} />
+          <Hero />
         </Box>
 
         <SearchExercise />
-        {!isLoading && <ExcerciseCategories bodyParts={bodyParts} />}
+        {!isLoading && <ExerciseCategories bodyParts={bodyParts} />}
         <ShowExercises />
       </Stack>
     </Box>

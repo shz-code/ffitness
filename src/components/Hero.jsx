@@ -1,7 +1,6 @@
 import { Box, Paper, Stack, Typography } from "@mui/material";
-import React, { memo } from "react";
 
-function Hero({ count }) {
+function Hero() {
   return (
     <Stack pt="5rem" direction={{ xs: "column", md: "row" }} id="home">
       <Box
@@ -73,8 +72,8 @@ function Hero({ count }) {
           gap={4}
         >
           <Box>
-            <Typography variant="h6">{count}</Typography>
-            <span>Total Excrcises</span>
+            <Typography variant="h6">1320+</Typography>
+            <span>Total Exercises</span>
           </Box>
           <Box>
             <Typography variant="h6">9</Typography>
@@ -118,4 +117,4 @@ function Hero({ count }) {
   );
 }
 
-export default memo(Hero);
+export default Hero;

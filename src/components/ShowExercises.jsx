@@ -1,16 +1,37 @@
 import { Box, Stack } from "@mui/material";
 import React from "react";
-// import { useGetExercisesQuery } from "../features/api/exercisesApiSlice";
-// import ExerciseGifCards from "./ExerciseGifCards";
 import { useSelector } from "react-redux";
+import { useGetExercisesQuery } from "../features/api/exercisesApiSlice";
+import ExerciseGifCards from "./ExerciseGifCards";
 import SectionHeader from "./SectionHeader";
 
 export default function ShowExercises() {
-  const { selectedBodyPart } = useSelector((state) => state.filter);
-
-  // const { data: exercises, isLoading } = useGetExercisesQuery();
+  const { data: exercises, isLoading, isError, error } = useGetExercisesQuery();
+  const { selectedBodyPart, search } = useSelector((state) => state.filter);
 
   // console.log(exercises);
+
+  let content = null;
+  if (isLoading && !isError) content = "Loading";
+  else if (!isLoading && isError) content = `Error ${error?.status}`;
+  else if (!isLoading && !isError && exercises.length === 0)
+    content = "Nothing Found";
+  else if (!isLoading && !isError && exercises.length > 0) {
+    content = exercises
+      .filter((exercise) => {
+        if (selectedBodyPart === "all") return exercise;
+        else return exercise.bodyPart === selectedBodyPart;
+      })
+      .filter((exercise) => {
+        if (exercise.name.toLowerCase().includes(search.toLowerCase()))
+          return exercise;
+        else if (
+          exercise.equipment.toLowerCase().includes(search.toLowerCase())
+        )
+          return exercise;
+        else return null;
+      });
+  }
 
   return (
     <Stack id="exercises">
@@ -20,12 +41,11 @@ export default function ShowExercises() {
         p3="exercises"
       />
       <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
-        {/* {!isLoading && <ExerciseGifCards exercises={exercises} />} */}
-        {/* {selectedBodyPart === "all" ? (
-          <ExerciseGifCards exercises={exercises} />
+        {content.length ? (
+          <ExerciseGifCards exercises={content} />
         ) : (
-          <ExerciseGifCards exercises={searchExercises} />
-        )} */}
+          "Nothing Found"
+        )}
       </Box>
     </Stack>
   );

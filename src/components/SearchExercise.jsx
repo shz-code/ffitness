@@ -14,6 +14,13 @@ export default function SearchExercise() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(setSearch(search));
+    if (window.innerWidth > 1535) {
+      window.scrollTo({ top: 1300, behavior: "smooth" });
+    } else if (window.innerWidth <= 899) {
+      window.scrollTo({ top: 1100, behavior: "smooth" });
+    } else if (window.innerWidth <= 1535) {
+      window.scrollTo({ top: 1150, behavior: "smooth" });
+    }
   };
 
   useEffect(() => {
@@ -38,7 +45,6 @@ export default function SearchExercise() {
         >
           <Stack position="relative" direction="row" style={{ width: "100%" }}>
             <input
-              required
               value={search}
               onChange={(e) => setLocalSearch(e.target.value)}
               type="text"
