@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useGetExercisesQuery } from "../features/api/exercisesApiSlice";
 import ExerciseGifCards from "./ExerciseGifCards";
+import Loader from "./Loader";
 import SectionHeader from "./SectionHeader";
 
 export default function ShowExercises() {
@@ -10,7 +11,7 @@ export default function ShowExercises() {
   const { selectedBodyPart, search } = useSelector((state) => state.filter);
 
   let content = null;
-  if (isLoading && !isError) content = "Loading";
+  if (isLoading && !isError) content = <Loader />;
   else if (!isLoading && isError) content = `Error ${error?.status}`;
   else if (!isLoading && !isError && exercises.length === 0)
     content = "Nothing Found";

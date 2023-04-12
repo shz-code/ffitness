@@ -1,10 +1,18 @@
 import { Box, Stack } from "@mui/material";
 import React, { memo } from "react";
+import ScrollToTop from "react-scroll-to-top";
 import { useGetBodyPartsQuery } from "../../features/api/exercisesApiSlice";
 import ExerciseCategories from "../ExerciseCategories";
 import Hero from "../Hero";
+import Loader from "../Loader";
 import SearchExercise from "../SearchExercise";
 import ShowExercises from "../ShowExercises";
+
+const sttStyle = {
+  borderRadius: "100%",
+  width: "50px",
+  height: "50px",
+};
 
 function Home() {
   const { data: bodyParts, isLoading } = useGetBodyPartsQuery();
@@ -24,9 +32,10 @@ function Home() {
         </Box>
 
         <SearchExercise />
-        {!isLoading && <ExerciseCategories bodyParts={bodyParts} />}
+        {isLoading ? <Loader /> : <ExerciseCategories bodyParts={bodyParts} />}
         <ShowExercises />
       </Stack>
+      <ScrollToTop smooth color="#FF6158" style={sttStyle} />
     </Box>
   );
 }

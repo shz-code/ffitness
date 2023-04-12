@@ -12,7 +12,7 @@ export default function Details({ details }) {
         gap="60px"
         sx={{ flexDirection: { lg: "row" }, p: "20px", alignItems: "center" }}
       >
-        <Box width="40%">
+        <Stack sx={{ maxWidth: "500px", width: "100%" }}>
           <img
             style={{
               width: "100%",
@@ -23,7 +23,7 @@ export default function Details({ details }) {
             src={gifUrl}
             alt={name}
           />
-        </Box>
+        </Stack>
         <Box sx={{ gap: { lg: "35px", xs: "20px" } }}>
           <Typography
             sx={{ fontSize: { lg: "64px", xs: "30px" } }}

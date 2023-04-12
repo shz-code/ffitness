@@ -2,6 +2,7 @@ import { Stack } from "@mui/material";
 import React from "react";
 import { useGetVideosQuery } from "../features/api/ytApiSlice";
 import ExerciseVideoCard from "./ExerciseVideoCard";
+import Loader from "./Loader";
 import SectionHeader from "./SectionHeader";
 
 export default function ExerciseVideos({ name }) {
@@ -23,12 +24,15 @@ export default function ExerciseVideos({ name }) {
           }}
           py={4}
         >
-          {!isLoading &&
+          {isLoading ? (
+            <Loader />
+          ) : (
             videos?.contents
               .slice(0, 6)
               .map((item, index) => (
                 <ExerciseVideoCard item={item} key={index} />
-              ))}
+              ))
+          )}
         </Stack>
       </Stack>
     </Stack>

@@ -5,6 +5,7 @@ import React, { useContext } from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { useGetSimilarExerciseQuery } from "../features/api/exercisesApiSlice";
 import ExerciseGifCard from "./ExerciseGifCard";
+import Loader from "./Loader";
 import SectionHeader from "./SectionHeader";
 
 export default function SimilarExercises({ target }) {
@@ -35,12 +36,15 @@ export default function SimilarExercises({ target }) {
       <SectionHeader p1="similar" p2="exercises" />
       <Stack position="relative" py={4} mb={{ xs: "4rem", md: "0" }}>
         <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-          {!isLoading &&
+          {isLoading ? (
+            <Loader />
+          ) : (
             exercises?.map((item) => (
               <Box key={item.id} ml="0" mr="2rem" draggble="false">
                 <ExerciseGifCard item={item} />
               </Box>
-            ))}
+            ))
+          )}
         </ScrollMenu>
       </Stack>
     </Stack>
