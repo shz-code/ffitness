@@ -1,7 +1,7 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import React from "react";
 
-export default function ExercisevideoCard({ item }) {
+export default function ExerciseVideoCard({ item }) {
   const { video } = item;
   const {
     videoId,

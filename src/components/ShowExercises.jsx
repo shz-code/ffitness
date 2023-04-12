@@ -9,8 +9,6 @@ export default function ShowExercises() {
   const { data: exercises, isLoading, isError, error } = useGetExercisesQuery();
   const { selectedBodyPart, search } = useSelector((state) => state.filter);
 
-  // console.log(exercises);
-
   let content = null;
   if (isLoading && !isError) content = "Loading";
   else if (!isLoading && isError) content = `Error ${error?.status}`;
@@ -41,7 +39,7 @@ export default function ShowExercises() {
         p3="exercises"
       />
       <Box sx={{ width: { xs: "95%", md: "80%" } }} m="auto">
-        {content.length ? (
+        {exercises?.length ? (
           <ExerciseGifCards exercises={content} />
         ) : (
           "Nothing Found"

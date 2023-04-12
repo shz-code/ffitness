@@ -16,6 +16,18 @@ const exercisesApiSlice = createApi({
         console.log("Get Exercises Api");
       },
     }),
+    getExercise: builder.query({
+      query: (id) => `exercises/exercise/${id}`,
+      onQueryStarted(args, { queryFulfilled, dispatch }) {
+        console.log("Get Exercise Api");
+      },
+    }),
+    getSimilarExercise: builder.query({
+      query: (name) => `exercises/target/${encodeURIComponent(name)}`,
+      onQueryStarted(args, { queryFulfilled, dispatch }) {
+        console.log("Get Similar Exercise Api");
+      },
+    }),
     getBodyParts: builder.query({
       query: () => "exercises/bodyPartList",
       onQueryStarted(args, { queryFulfilled, dispatch }) {
@@ -26,4 +38,9 @@ const exercisesApiSlice = createApi({
 });
 
 export default exercisesApiSlice;
-export const { useGetExercisesQuery, useGetBodyPartsQuery } = exercisesApiSlice;
+export const {
+  useGetExercisesQuery,
+  useGetBodyPartsQuery,
+  useGetExerciseQuery,
+  useGetSimilarExerciseQuery,
+} = exercisesApiSlice;
