@@ -54,7 +54,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Snapshots
 
-![ffitness](./src/assets/img/website-preview.jpeg)
+![ffitness](./src/assets/img/website-preview.png)
 
 ## Run Locally
 
